@@ -1,11 +1,16 @@
 import './App.css'
+import HomePage from './Componentes/HomePage.jsx'
+import Navbar from './Componentes/Navbar.jsx'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      
+      <Navbar />
+      <div className='app'>
+      <HomePage />
+      </div>
     </>
   )
 }
