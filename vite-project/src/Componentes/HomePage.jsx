@@ -4,9 +4,9 @@ import './HomePage.css';
 const HomePage = () => {
     return (
         <div className="home-page">
-            <h1>Juegos ANTAJO</h1>
-            <p>Tu sitio de videojuegos preferido</p>
-            <button>Prueba la beta</button>
+            <h1 className='titulo'>Juegos ANTAJO</h1>
+            <p className='p'>Tu sitio de videojuegos preferido</p>
+            <button className='boton'>Prueba la beta</button>
         </div>
     );
 };
