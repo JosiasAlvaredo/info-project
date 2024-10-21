@@ -1,6 +1,9 @@
 .home-page {
     height: 100vh;
     display: block;
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .titulo {
@@ -17,7 +20,7 @@
     font-size: 18px;
     text-justify: left;
     color: white;
-    text-align: center;
+    text-align: start;
     margin-top: 10px;
 }
 
