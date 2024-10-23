@@ -7,8 +7,8 @@
     top: 0;
     width: 100%;
     left: 0;
+    padding: 0px;
 }
-
 
 .navbar ul {
     list-style: none;
@@ -29,4 +29,10 @@
 
 .navbar a:hover {
     color: #4e4e4e;
+}
+
+.navbar img {
+    margin-right: 10px;
+    width: 70px; 
+    height: 70px;
 }
