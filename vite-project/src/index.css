@@ -1,3 +1,11 @@
+@font-face {
+  font-family: '{nombre de la fuente}';
+  src: url('{url del archivo .OTF/.TTF/.WOFF}');
+  font-weight: normal;
+  font-style: normal;
+  font-size: 100%;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
