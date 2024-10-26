@@ -7,7 +7,7 @@ function VoF() {
     const [isCorrect, setIsCorrect] = useState(null);
 
     useEffect(() => {
-        fetch('https://opentdb.com/api.php?amount=1&type=boolean')
+        fetch('https://opentdb.com/api.php?amount=10&type=boolean')
             .then(res => res.json())
             .then(data => {
                 setQuestion({

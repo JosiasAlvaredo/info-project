@@ -12,7 +12,7 @@ function Navbar() {
                 <img src={imagen} alt="Logo" />
                 <ul>
                     <li><a onClick={() => navigate('/home')}>Inicio</a></li>
-                    <li><a href="#">Juego</a></li>
+                    <li><a onClick={() => navigate('/game')}>Juego</a></li>
                 </ul>
             </nav>
         </>
