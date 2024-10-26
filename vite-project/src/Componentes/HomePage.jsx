@@ -9,8 +9,8 @@ const HomePage = () => {
         <div className="home-page">
             <h1 className='titulo'>Juegos ANTAJO</h1>
             <p className='p'>Tu sitio</p>
-            <p className='p2'>preferido</p>
-            <p className='p2'>de videojuegos</p>
+            <p className='p'>preferido</p>
+            <p className='p'>de videojuegos</p>
             <button className='boton' onClick={() => navigate('/game')}>
                 Prueba la beta
             </button>
