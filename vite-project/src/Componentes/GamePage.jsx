@@ -1,6 +1,6 @@
 import React from 'react';
 import './GamePage.css';
-import gameImage from '../Imagenes/info.jpeg'
+import gameImage from '../Imagenes/info.jpeg';
 const GamePage = () => {
     return (
         <div className="game-page">
