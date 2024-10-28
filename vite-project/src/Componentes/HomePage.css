@@ -13,7 +13,7 @@
     color: white;
     text-align: start;
     margin-top: 35%;
-    margin-bottom: 25px;
+    margin-bottom: 15%;
 }
 
 .p {
@@ -22,15 +22,7 @@
     text-justify: left;
     color: white;
     text-align: start;
-}
-
-.p2 {
-    font-family: 'Arial', sans-serif;
-    font-size: 55px;
-    text-justify: left;
-    color: white;
-    text-align: start;
-    margin-top: -15%;
+    margin-top: -5%;
 }
 
 
