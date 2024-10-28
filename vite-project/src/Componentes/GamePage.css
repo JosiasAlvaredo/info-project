@@ -1,13 +1,16 @@
+@import url('https://fonts.cdnfonts.com/css/tt-octosquares-trl');
 .game-page {
     background-color: #000123;
     padding: 20px;
-    height: calc(100vh - 60px); 
+    height: calc(100vh - 60px);     
     margin-top: 60px; 
     overflow-y: auto; 
+    width:100%;
 }
+
 .grid-container {
     display: grid; 
-    grid-template-columns: 700px 1fr; 
+    grid-template-columns: 400px 1fr; 
     gap: 10px; 
 }
 
@@ -15,22 +18,28 @@
 .game-image {
     grid-column: 1; 
     margin: 60px;
-    width: 700px; 
-    height: 700px; 
+    width: 400px; 
+    height: 400px; 
     object-fit: cover; 
     border-radius: 28px; 
 }
 
 .text-container {
     grid-column: 2; 
-    padding: 100px;
+    padding: 80px;
     display: flex;
     flex-direction: column; 
     align-items: flex-start; 
 }
 
-h1, p {
+h1, h2 {
     margin-bottom: 20px; 
+    font-family: 'TT Octosquares Trl Cnd', sans-serif;
+    font-weight: 300;
+}
+
+h1{
+    color: #ff0f7b;
 }
 
 .boton {
@@ -48,8 +57,45 @@ h1, p {
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: 'TT Octosquares Trl Cnd', sans-serif;
+    font-weight: 300;
 }
 
 .boton:hover {
     background-color: #c70064;
+}
+.dropdown-container {
+    display: flex; /* Usar flexbox para alinear los dropdowns horizontalmente */
+    margin-top: 10px; /* Espacio entre el botón y los dropdowns */
+}
+
+.dropdown-header {
+    padding: 8px 16px; /* Espaciado interno para el encabezado del dropdown */
+    background-color: #f0f0f0; /* Color de fondo del encabezado */
+    border: 1px solid #ccc; /* Borde del encabezado */
+    border-radius: 8px; /* Esquinas redondeadas */
+    color: #888; /* Color del texto para indicar que es una opción por defecto */
+    cursor: default; /* Cambia el cursor para indicar que no es clickeable */
+}
+
+.dropdown-header:hover {
+    background-color: #e0e0e0; /* Cambia el fondo al pasar el mouse, pero no debe ser seleccionable */
+}
+.dropdown ul {
+    background-color: #f0f0f0;
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin espaciado interno */
+    margin: 0; /* Sin margen */
+    position: absolute; /* Posicionamiento absoluto para el menú desplegable */
+    z-index: 1000; /* Asegura que el dropdown esté por encima de otros elementos */
+}
+
+.dropdown li {
+    padding: 8px 16px; /* Espaciado interno para los elementos de la lista */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el elemento */
+    color: black; /* Color del texto */
+}
+
+.dropdown li:hover {
+    background-color: #e0e0e0; /* Color de fondo al pasar el mouse */
 }
