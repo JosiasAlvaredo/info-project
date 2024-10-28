@@ -13,6 +13,20 @@ body {
 .container {
     display: flex;
     gap: 20px;
+    width: 400px;
+    height: 400px;
+}
+
+.quiz-question {
+    margin-top: 80px; /* Adjust this value to lower the question */
+}
+
+.quiz-options {
+    margin-top: 80px;
+}
+
+.result {
+    margin-top: 80px;
 }
 
 .button {

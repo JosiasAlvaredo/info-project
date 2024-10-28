@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import he from 'he'; // Import the he library
+import './VoF.css';
 
 function VoF() {
     const [question, setQuestion] = useState(null);
@@ -10,16 +12,25 @@ function VoF() {
     const [totalQuestions] = useState(10);
     const [resultMessage, setResultMessage] = useState('');
     const [isGameOver, setIsGameOver] = useState(false);
+    const [loading, setLoading] = useState(true); // Loading state
 
     useEffect(() => {
         loadQuestion();
     }, []);
 
     const loadQuestion = async () => {
-        const APIUrl = 'https://opentdb.com/api.php?amount=1&type=multiple';
-        const result = await fetch(APIUrl);
-        const data = await result.json();
-        showQuestion(data.results[0]);
+        setLoading(true); // Set loading to true
+        try {
+            const APIUrl = 'https://opentdb.com/api.php?amount=1&type=boolean';
+            const result = await fetch(APIUrl);
+            const data = await result.json();
+            showQuestion(data.results[0]);
+        } catch (error) {
+            console.error("Error fetching the question:", error);
+            setResultMessage('Error loading question. Please try again later.');
+        } finally {
+            setLoading(false); // Set loading to false after fetching
+        }
     };
 
     const showQuestion = (data) => {
@@ -27,7 +38,7 @@ function VoF() {
         const incorrectAnswers = data.incorrect_answers;
         const allOptions = [...incorrectAnswers, data.correct_answer];
         setOptions(shuffleArray(allOptions)); // Shuffle options
-        setQuestion(data.question);
+        setQuestion(he.decode(data.question)); // Decode the question
         setSelectedOption(null);
         setResultMessage('');
     };
@@ -64,13 +75,15 @@ function VoF() {
 
     return (
         <div>
-            {!isGameOver ? (
+            {loading ? (
+                <p>Loading question...</p>
+            ) : !isGameOver ? (
                 <>
-                    <h2>{question}</h2>
+                    <h2 className="quiz-question">{question}</h2>
                     <ul className="quiz-options">
                         {options.map((option, index) => (
                             <li key={index} onClick={() => setSelectedOption(option)} className={selectedOption === option ? 'selected' : ''}>
-                                {option}
+                                {he.decode(option)} {/* Decode the option */}
                             </li>
                         ))}
                     </ul>
@@ -78,7 +91,7 @@ function VoF() {
                     {resultMessage && <p id="result">{resultMessage}</p>}
                 </>
             ) : (
-                <div>
+                <div className="result">
                     <p>Your score is {correctScore} out of {totalQuestions}.</p>
                     <button id="play-again" onClick={restartQuiz}>Play Again</button>
                 </div>

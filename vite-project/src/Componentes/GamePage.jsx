@@ -13,7 +13,7 @@ const GamePage = () => {
                 <div className="text-container">
                     <h1>PREGUNTADOS</h1>
                     <h2>Rétate a ti mismo en una batalla de ingenio y habilidades frente a personajes</h2>
-                    <button className='boton' onClick={() => navigate('/pregunta')}> {/* Cambia la ruta aquí */}
+                    <button className='boton' onClick={() => navigate('/vof')}> {/* Cambia la ruta aquí */}
                         INICIAR
                     </button>
                 </div>
