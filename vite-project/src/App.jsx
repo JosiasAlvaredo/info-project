@@ -13,8 +13,9 @@ function App() {
         <Navbar />
         <div className='app'>
           <Routes>
-            <Route path="/home" element={<HomePage />} /> 
-            <Route path="/game" element={<GamePage />} /> 
+            <Route path="/" element={<HomePage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/game" element={<GamePage />} />
             <Route path="/vof" element={<VoF />} />
           </Routes>
         </div>
