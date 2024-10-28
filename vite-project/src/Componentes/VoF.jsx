@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import he from 'he'; // Import the he library
+import he from 'he';
 import './VoF.css';
 
 function VoF() {
@@ -12,14 +12,14 @@ function VoF() {
     const [totalQuestions] = useState(10);
     const [resultMessage, setResultMessage] = useState('');
     const [isGameOver, setIsGameOver] = useState(false);
-    const [loading, setLoading] = useState(true); // Loading state
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         loadQuestion();
     }, []);
 
     const loadQuestion = async () => {
-        setLoading(true); // Set loading to true
+        setLoading(true);
         try {
             const APIUrl = 'https://opentdb.com/api.php?amount=1&type=boolean';
             const result = await fetch(APIUrl);
@@ -29,40 +29,34 @@ function VoF() {
             console.error("Error fetching the question:", error);
             setResultMessage('Error loading question. Please try again later.');
         } finally {
-            setLoading(false); // Set loading to false after fetching
+            setLoading(false);
         }
     };
 
     const showQuestion = (data) => {
         setCorrectAnswer(data.correct_answer);
         const incorrectAnswers = data.incorrect_answers;
-        const allOptions = [...incorrectAnswers, data.correct_answer];
-        setOptions(shuffleArray(allOptions)); // Shuffle options
-        setQuestion(he.decode(data.question)); // Decode the question
+        const allOptions = ["True", "False"];
+    
+        setOptions(allOptions);
+        setQuestion(he.decode(data.question));
         setSelectedOption(null);
         setResultMessage('');
     };
 
-    const shuffleArray = (array) => {
-        return array.sort(() => Math.random() - 0.5);
-    };
-
-    const checkAnswer = () => {
-        if (selectedOption) {
-            if (selectedOption === correctAnswer) {
-                setCorrectScore(correctScore + 1);
-                setResultMessage('Correct Answer!');
-            } else {
-                setResultMessage(`Incorrect Answer! Correct Answer: ${correctAnswer}`);
-            }
-            setAskedCount(askedCount + 1);
-            if (askedCount + 1 === totalQuestions) {
-                setIsGameOver(true);
-            } else {
-                setTimeout(loadQuestion, 2000);
-            }
+    const handleOptionClick = (option) => {
+        setSelectedOption(option);
+        if (option === correctAnswer) {
+            setCorrectScore(correctScore + 1);
+            setResultMessage('Correct Answer!');
         } else {
-            setResultMessage('Please select an option!');
+            setResultMessage(`Incorrect Answer! Correct Answer: ${correctAnswer}`);
+        }
+        setAskedCount(askedCount + 1);
+        if (askedCount + 1 === totalQuestions) {
+            setIsGameOver(true);
+        } else {
+            setTimeout(loadQuestion, 2000);
         }
     };
 
@@ -74,24 +68,23 @@ function VoF() {
     };
 
     return (
-        <div>
+        <div className="quiz-container">
             {loading ? (
                 <p>Loading question...</p>
             ) : !isGameOver ? (
                 <>
                     <h2 className="quiz-question">{question}</h2>
                     <ul className="quiz-options">
-                        {options.map((option, index) => (
-                            <li key={index} onClick={() => setSelectedOption(option)} className={selectedOption === option ? 'selected' : ''}>
-                                {he.decode(option)} {/* Decode the option */}
-                            </li>
-                        ))}
-                    </ul>
-                    <button id="check-answer" onClick={checkAnswer}>Check Answer</button>
+    {options.map((option, index) => (
+        <li key={index} onClick={() => handleOptionClick(option)} className={selectedOption === option ? 'selected' : ''}>
+            {he.decode(option)} {}
+        </li>
+    ))}
+</ul>
                     {resultMessage && <p id="result">{resultMessage}</p>}
                 </>
             ) : (
-                <div className="result">
+                <div>
                     <p>Your score is {correctScore} out of {totalQuestions}.</p>
                     <button id="play-again" onClick={restartQuiz}>Play Again</button>
                 </div>
