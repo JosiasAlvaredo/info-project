@@ -7,8 +7,8 @@ const GamePage = () => {
     const navigate = useNavigate(); 
     const [dropdown1Visible, setDropdown1Visible] = useState(false);
     const [dropdown2Visible, setDropdown2Visible] = useState(false);
-    const [selectedOption1, setSelectedOption1] = useState('Selecciona una opción'); // Opción seleccionada por defecto
-    const [selectedOption2, setSelectedOption2] = useState('Selecciona una opción'); // Opción seleccionada por defecto
+    const [selectedOption1, setSelectedOption1] = useState('Categoria'); 
+    const [selectedOption2, setSelectedOption2] = useState('Dificultad');
 
     const handleOptionClick1 = (option) => {
         setSelectedOption1(option);
@@ -29,6 +29,7 @@ const GamePage = () => {
                     <h2>Rétate a ti mismo en una batalla de ingenio y habilidades frente a personajes</h2>
                     <button className='boton' onClick={() => navigate('/vof')}>
                         INICIAR
+                        <div class='flecha'></div>
                     </button>
                     <div className="dropdown-container">
                         <div className="dropdown">
