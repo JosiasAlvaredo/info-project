@@ -2,7 +2,8 @@ import './App.css';
 import HomePage from './Componentes/HomePage.jsx';
 import GamePage from './Componentes/GamePage.jsx';
 import Navbar from './Componentes/Navbar.jsx';
-import VoF from './Componentes/MC.jsx';
+import VoF from './Componentes/VoF.jsx';
+import MC from './Componentes/MC.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/game" element={<GamePage />} />
             <Route path="/vof" element={<VoF />} />
+            <Route path="/MC" element={<MC />} />
           </Routes>
         </div>
       </Router>

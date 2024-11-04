@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import he from 'he';
-import './MC.css'
+import './MC.css';
 
 function MC() {
     const [question, setQuestion] = useState(null);
@@ -79,7 +79,11 @@ function MC() {
                     <h2 className="quiz-question">{question}</h2>
                     <ul className="quiz-options">
                         {options.map((option, index) => (
-                            <li key={index} onClick={() => handleOptionClick(option)} className={selectedOption === option ? 'selected' : ''}>
+                            <li 
+                                key={index} 
+                                onClick={() => handleOptionClick(option)} 
+                                className={`option option-${index} ${selectedOption === option ? 'selected' : ''}`}
+                            >
                                 {he.decode(option)} {}
                             </li>
                         ))}
