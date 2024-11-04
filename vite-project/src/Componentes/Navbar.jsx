@@ -1,6 +1,6 @@
 import './Navbar.css';
 import React from 'react';
-import imagen from '../Imagenes/1.png';
+import imagen from '../Images/1.png';
 import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
@@ -11,8 +11,8 @@ function Navbar() {
             <nav className="navbar">
                 <img src={imagen} alt="Logo" />
                 <ul>
-                    <li><a onClick={() => navigate('/home')} style={{ cursor: 'pointer' }}>Inicio</a></li>
-                    <li><a onClick={() => navigate('/game')} style={{ cursor: 'pointer' }}>Juego</a></li>
+                    <li><a onClick={() => navigate('/home')} style={{ cursor: 'pointer' }}>Home</a></li>
+                    <li><a onClick={() => navigate('/game')} style={{ cursor: 'pointer' }}>Game</a></li>
                 </ul>
             </nav>
         </>

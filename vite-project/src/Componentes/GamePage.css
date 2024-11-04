@@ -45,7 +45,7 @@ h1, h2 {
 
 h1 {
     color: #ff0f7b;
-    font-size: 2.5rem; 
+    font-size: 3rem; 
 }
 
 h2 {
@@ -64,7 +64,7 @@ h2 {
     }
 }
 
-.boton {
+.button {
     background-color: #ff0080;
     color: white;
     border: none;
@@ -86,7 +86,7 @@ h2 {
     box-sizing: border-box; 
 }
 
-.flecha {
+.arrow {
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -98,14 +98,14 @@ h2 {
     padding: 0.5rem; 
 }
 
-.flecha::before {
+.arrow::before {
     content: '→'; 
     color: black;
     font-size: 1.5rem; 
     font-weight: bold; 
 }
 
-.boton:hover {
+.button:hover {
     background-color: #c70064;
 }
 .dropdown-container {
@@ -158,6 +158,3 @@ h2 {
 .dropdown-list li:hover {
     background-color: #f0f0f0; 
 }
-
-
-

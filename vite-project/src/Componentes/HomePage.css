@@ -1,43 +1,43 @@
+@import url('https://fonts.cdnfonts.com/css/tt-octosquares-trl');
 .home-page {
     height: 100vh;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px;
 }
 
 .titulo {
-    font-family: 'Arial', sans-serif;
-    font-size: 30px;
+    font-family: 'TT Octosquares Trl', sans-serif;
+    font-size: 4.5rem;
     font-weight: bold;
-    color: white;
-    text-align: start;
-    margin-top: 25%;
-    margin-bottom: 15%;
+    color: #D3A54C;
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 5%;
 }
-
 .p {
-    font-family: 'Arial', sans-serif;
-    font-size: 55px;
-    text-justify: left;
+    font-family:'TT Octosquares Trl Cnd', sans-serif;
+    font-size: 3rem;
     color: white;
-    text-align: start;
-    margin-top: 0%;
+    text-align: left;
+    margin-top: 0;
 }
-
 
 .boton {
     background-color: #ff0080;
     color: white;
     border: none;
-    padding: 5px 20px;
+    padding: 10px 20px;
     text-align: center;
-    width: 140px;
+    width: auto;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1rem;
     margin: 10px 0;
-    margin-bottom: 0px;
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -45,4 +45,17 @@
 
 .boton:hover {
     background-color: #c70064;
+}
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 1.5rem;
+    }
+    .p {
+        font-size: 2rem;
+    }
+    .boton {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
 }

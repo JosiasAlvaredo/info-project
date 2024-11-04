@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import './GamePage.css';
-import gameImage from '../Imagenes/info.jpeg';
+import gameImage from '../Images/info.jpeg';
 
 const GamePage = () => {
     const navigate = useNavigate(); 
     const [dropdown1Visible, setDropdown1Visible] = useState(false);
     const [dropdown2Visible, setDropdown2Visible] = useState(false);
-    const [selectedOption1, setSelectedOption1] = useState('Categoría'); 
-    const [selectedOption2, setSelectedOption2] = useState('Dificultad');
+    const [selectedOption1, setSelectedOption1] = useState('Category'); 
+    const [selectedOption2, setSelectedOption2] = useState('Difficulty');
 
     const handleOptionClick1 = (option) => {
         setSelectedOption1(option);
@@ -23,13 +23,13 @@ const GamePage = () => {
     return (
         <div className="game-page">
             <div className="grid-container">
-                <img src={gameImage} alt="Descripción del juego" className="game-image" />
+                <img src={gameImage} alt="Game Description" className="game-image" />
                 <div className="text-container">
-                    <h1>PREGUNTADOS</h1>
-                    <h2>Rétate a ti mismo en una batalla de ingenio y habilidades frente a personajes</h2>
-                    <button className='boton' onClick={() => navigate('/vof')}>
-                        INICIAR
-                        <div className='flecha'></div>
+                    <h1>QUIZ</h1>
+                    <h2>Challenge yourself in a battle of wits and skills against characters</h2>
+                    <button className='button' onClick={() => navigate('/vof')}>
+                        START
+                        <div className='arrow'></div>
                     </button>
                     <div className="dropdown-container">
                         <div className="dropdown">
@@ -41,8 +41,8 @@ const GamePage = () => {
                             </div>
                             {dropdown1Visible && (
                                 <ul className="dropdown-list">
-                                    <li onClick={() => handleOptionClick1('Verdadero/Falso')}>Verdadero/Falso</li>
-                                    <li onClick={() => handleOptionClick1('Opciones Múltiples')}>Opciones Múltiples</li>
+                                    <li onClick={() => handleOptionClick1('True/False')}>True/False</li>
+                                    <li onClick={() => handleOptionClick1('Multiple Choise')}>Multiple Choise</li>
                                 </ul>
                             )}
                         </div>
@@ -55,9 +55,9 @@ const GamePage = () => {
                             </div>
                             {dropdown2Visible && (
                                 <ul className="dropdown-list">
-                                    <li onClick={() => handleOptionClick2('Fácil')}>Fácil</li>
-                                    <li onClick={() => handleOptionClick2('Medio')}>Medio</li>
-                                    <li onClick={() => handleOptionClick2('Difícil')}>Difícil</li>
+                                    <li onClick={() => handleOptionClick2('Easy')}>Easy</li>
+                                    <li onClick={() => handleOptionClick2('Medium')}>Medium</li>
+                                    <li onClick={() => handleOptionClick2('Hard')}>Hard</li>
                                 </ul>
                             )}
                         </div>
