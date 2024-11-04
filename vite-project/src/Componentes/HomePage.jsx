@@ -7,11 +7,12 @@ const HomePage = () => {
 
     return (
         <div className="home-page">
-            <h1 className='titulo'>ANTAJO's GAMES</h1>
+            <h1 className='title'>ANTAJO's GAMES</h1>
             <p className='p'>Your favourite place</p>
             <p className='p'>for games</p>
-            <button className='boton' onClick={() => navigate('/game')}>
+            <button className='button' onClick={() => navigate('/game')}>
                 Try Demo
+                <div className='arrow'></div>
             </button>
         </div>
     );
