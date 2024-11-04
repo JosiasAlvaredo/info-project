@@ -27,7 +27,6 @@ function VoF() {
             showQuestion(data.results[0]);
         } catch (error) {
             console.error("Error fetching the question:", error);
-            setResultMessage('Error loading question. Please try again later.');
         } finally {
             setLoading(false);
         }

@@ -2,7 +2,7 @@
   background-image: url('./Imagenes/Fondo.png');
   background-size: cover;
   background-position: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
