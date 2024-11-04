@@ -7,7 +7,7 @@ const GamePage = () => {
     const navigate = useNavigate(); 
     const [dropdown1Visible, setDropdown1Visible] = useState(false);
     const [dropdown2Visible, setDropdown2Visible] = useState(false);
-    const [selectedOption1, setSelectedOption1] = useState('Categoria'); 
+    const [selectedOption1, setSelectedOption1] = useState('Categoría'); 
     const [selectedOption2, setSelectedOption2] = useState('Dificultad');
 
     const handleOptionClick1 = (option) => {
@@ -29,22 +29,20 @@ const GamePage = () => {
                     <h2>Rétate a ti mismo en una batalla de ingenio y habilidades frente a personajes</h2>
                     <button className='boton' onClick={() => navigate('/vof')}>
                         INICIAR
-                        <div class='flecha'></div>
+                        <div className='flecha'></div>
                     </button>
                     <div className="dropdown-container">
                         <div className="dropdown">
                             <div 
                                 className="dropdown-header" 
                                 onClick={() => setDropdown1Visible(!dropdown1Visible)}
-                                style={{ cursor: 'default' }} // Para indicar que no es clickeable
                             >
                                 {selectedOption1}
                             </div>
                             {dropdown1Visible && (
-                                <ul>
-                                    <li onClick={() => handleOptionClick1('Opción 1')}>Opción 1</li>
-                                    <li onClick={() => handleOptionClick1('Opción 2')}>Opción 2</li>
-                                    <li onClick={() => handleOptionClick1('Opción 3')}>Opción 3</li>
+                                <ul className="dropdown-list">
+                                    <li onClick={() => handleOptionClick1('Verdadero/Falso')}>Verdadero/Falso</li>
+                                    <li onClick={() => handleOptionClick1('Opciones Múltiples')}>Opciones Múltiples</li>
                                 </ul>
                             )}
                         </div>
@@ -52,15 +50,14 @@ const GamePage = () => {
                             <div 
                                 className="dropdown-header" 
                                 onClick={() => setDropdown2Visible(!dropdown2Visible)}
-                                style={{ cursor: 'default' }} // Para indicar que no es clickeable
                             >
                                 {selectedOption2}
                             </div>
                             {dropdown2Visible && (
-                                <ul>
-                                    <li onClick={() => handleOptionClick2('Opción 1')}>Opción 1</li>
-                                    <li onClick={() => handleOptionClick2('Opción 2')}>Opción 2</li>
-                                    <li onClick={() => handleOptionClick2('Opción 3')}>Opción 3</li>
+                                <ul className="dropdown-list">
+                                    <li onClick={() => handleOptionClick2('Fácil')}>Fácil</li>
+                                    <li onClick={() => handleOptionClick2('Medio')}>Medio</li>
+                                    <li onClick={() => handleOptionClick2('Difícil')}>Difícil</li>
                                 </ul>
                             )}
                         </div>

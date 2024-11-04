@@ -27,7 +27,6 @@ function VoF() {
             showQuestion(data.results[0]);
         } catch (error) {
             console.error("Error fetching the question:", error);
-            setResultMessage('Error loading question. Please try again later.');
         } finally {
             setLoading(false);
         }
@@ -35,9 +34,7 @@ function VoF() {
 
     const showQuestion = (data) => {
         setCorrectAnswer(data.correct_answer);
-        const incorrectAnswers = data.incorrect_answers;
         const allOptions = ["True", "False"];
-    
         setOptions(allOptions);
         setQuestion(he.decode(data.question));
         setSelectedOption(null);
@@ -75,12 +72,19 @@ function VoF() {
                 <>
                     <h2 className="quiz-question">{question}</h2>
                     <ul className="quiz-options">
-    {options.map((option, index) => (
-        <li key={index} onClick={() => handleOptionClick(option)} className={selectedOption === option ? 'selected' : ''}>
-            {he.decode(option)} {}
-        </li>
-    ))}
-</ul>
+                        <li 
+                            className={`true ${selectedOption === "True" ? 'selected' : ''}`} 
+                            onClick={() => handleOptionClick("True")}
+                        >
+                            T
+                        </li>
+                        <li 
+                            className={`false ${selectedOption === "False" ? 'selected' : ''}`} 
+                            onClick={() => handleOptionClick("False")}
+                        >
+                            F
+                        </li>
+                    </ul>
                     {resultMessage && <p id="result">{resultMessage}</p>}
                 </>
             ) : (
