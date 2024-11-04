@@ -8,11 +8,10 @@ const HomePage = () => {
     return (
         <div className="home-page">
             <h1 className='titulo'>ANTAJO's GAMES</h1>
-            <p className='p'>Your</p>
-            <p className='p'>favourite site</p>
-            <p className='p'>of games</p>
+            <p className='p'>Your favourite place</p>
+            <p className='p'>for games</p>
             <button className='boton' onClick={() => navigate('/game')}>
-                Prueba la beta
+                Try Demo
             </button>
         </div>
     );

@@ -1,41 +1,44 @@
 @import url('https://fonts.cdnfonts.com/css/tt-octosquares-trl');
+
 .home-page {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 0 5%;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .titulo {
     font-family: 'TT Octosquares Trl', sans-serif;
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     font-weight: bold;
     color: #D3A54C;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 10%;
     margin-bottom: 5%;
 }
+
 .p {
-    font-family:'TT Octosquares Trl Cnd', sans-serif;
-    font-size: 3rem;
+    font-family: 'TT Octosquares Trl Cnd', sans-serif;
+    font-size: 2.5rem;
     color: white;
-    text-align: left;
+    text-align: center;
     margin-top: 0;
 }
 
 .boton {
+    font-family: 'TT Octosquares Trl', sans-serif;
     background-color: #ff0080;
     color: white;
     border: none;
     padding: 10px 20px;
     text-align: center;
-    width: auto;
+    min-width: 160px;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     font-size: 1rem;
     margin: 10px 0;
     border-radius: 25px;
@@ -49,13 +52,26 @@
 
 @media (max-width: 768px) {
     .titulo {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
     .p {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .boton {
         font-size: 0.9rem;
         padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 2rem;
+    }
+    .p {
+        font-size: 1.5rem;
+    }
+    .boton {
+        font-size: 0.8rem;
+        padding: 6px 12px;
     }
 }
