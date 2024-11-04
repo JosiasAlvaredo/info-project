@@ -2,7 +2,7 @@ import './App.css';
 import HomePage from './Componentes/HomePage.jsx';
 import GamePage from './Componentes/GamePage.jsx';
 import Navbar from './Componentes/Navbar.jsx';
-import VoF from './Componentes/VoF.jsx';
+import VoF from './Componentes/MC.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
