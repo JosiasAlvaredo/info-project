@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import he from 'he';
 import './ToF.css';
 
-function ToF() {
+function VoF() {
     const [question, setQuestion] = useState(null);
     const [options, setOptions] = useState([]);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -97,4 +97,4 @@ function ToF() {
     );
 }
 
-export default ToF;
+export default VoF;

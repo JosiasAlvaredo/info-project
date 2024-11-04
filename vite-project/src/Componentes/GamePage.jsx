@@ -27,7 +27,7 @@ const GamePage = () => {
                 <div className="text-container">
                     <h1>QUIZ</h1>
                     <h2>Challenge yourself in a battle of wits and skills against characters</h2>
-                    <button className='button' onClick={() => navigate('/vof')}>
+                    <button className='button' onClick={() => navigate('/tof')}>
                         START
                         <div className='arrow'></div>
                     </button>
