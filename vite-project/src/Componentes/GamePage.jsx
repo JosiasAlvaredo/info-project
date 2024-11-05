@@ -6,9 +6,7 @@ import gameImage from '../Images/info.jpeg';
 const GamePage = () => {
     const navigate = useNavigate(); 
     const [dropdown1Visible, setDropdown1Visible] = useState(false);
-    const [dropdown2Visible, setDropdown2Visible] = useState(false);
     const [selectedOption1, setSelectedOption1] = useState('Category'); 
-    const [selectedOption2, setSelectedOption2] = useState('Difficulty');
     const [questions, setQuestions] = useState([]); 
 
     const handleOptionClick1 = (option) => {
@@ -16,13 +14,8 @@ const GamePage = () => {
         setDropdown1Visible(false);
     };
 
-    const handleOptionClick2 = (option) => {
-        setSelectedOption2(option);
-        setDropdown2Visible(false);
-    };
-
-    const fetchQuestions = (category, difficulty) => {
-        const url = `https://opentdb.com/api.php?amount=10&category=9&type=${category}&difficulty=${difficulty}`;
+    const fetchQuestions = (category) => {
+        const url = `https://opentdb.com/api.php?amount=10&category=9&type=${category}`;
 
         return fetch(url)
             .then(response => {
@@ -42,31 +35,17 @@ const GamePage = () => {
 
     const handleStartClick = () => {
         try {
-            if (selectedOption1 === 'Category' || selectedOption2 === 'Difficulty') {
-                throw new Error("Please, select a category and difficulty before starting.");
+            if (selectedOption1 === 'Category') {
+                throw new Error("Please, select a category before starting.");
             }
     
             const category = selectedOption1 === 'True/False' ? 'boolean' : 'multiple';
-            const difficulty = selectedOption2.toLowerCase();
-            fetchQuestions(category, difficulty)
+            fetchQuestions(category)
                 .then(() => {
                     if (category === 'multiple') {
-                        if (difficulty === 'easy') {
-                            navigate('/mc/easy'); 
-                        } else if (difficulty === 'medium') {
-                            navigate('/mc/medium');
-                        } else {
-                            navigate('/mc/hard'); 
-                        }
+                        navigate('/mc'); 
                     } else {
-
-                        if (difficulty === 'easy') {
-                            navigate('/tof/easy'); 
-                        } else if (difficulty === 'medium') {
-                            navigate('/tof/medium'); 
-                        } else {
-                            navigate('/tof/hard');
-                        }
+                        navigate('/tof'); 
                     }
                 })
                 .catch(error => {
@@ -101,21 +80,6 @@ const GamePage = () => {
                                 <ul className="dropdown-list">
                                     <li onClick={() => handleOptionClick1('True/False')}>True/False</li>
                                     <li onClick={() => handleOptionClick1('Multiple Choice')}>Multiple Choice</li>
-                                </ul>
-                            )}
-                        </div>
-                        <div className="dropdown">
-                            <div 
-                                className="dropdown-header" 
-                                onClick={() => setDropdown2Visible(!dropdown2Visible)}
-                            >
-                                {selectedOption2}
-                            </div>
-                            {dropdown2Visible && (
-                                <ul className="dropdown-list">
-                                    <li onClick={() => handleOptionClick2('Easy') }>Easy</li>
-                                    <li onClick={() => handleOptionClick2 ('Medium')}>Medium</li>
-                                    <li onClick={() => handleOptionClick2('Hard')}>Hard</li>
                                 </ul>
                             )}
                         </div>
